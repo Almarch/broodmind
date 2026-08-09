@@ -1,0 +1,569 @@
+{
+  "bots": [
+    {
+      "name": "Stardust",
+      "race": "protoss",
+      "elo": 3426
+    },
+    {
+      "name": "BananaBrain",
+      "race": "protoss",
+      "elo": 3222
+    },
+    {
+      "name": "PurpleWave",
+      "race": "protoss",
+      "elo": 3158
+    },
+    {
+      "name": "Brainiac",
+      "race": "random",
+      "elo": 3139
+    },
+    {
+      "name": "Crona",
+      "race": "zerg",
+      "elo": 3104
+    },
+    {
+      "name": "Monster",
+      "race": "zerg",
+      "elo": 3096
+    },
+    {
+      "name": "Locutus",
+      "race": "protoss",
+      "elo": 3073
+    },
+    {
+      "name": "Terminus",
+      "race": "terran",
+      "elo": 3043
+    },
+    {
+      "name": "Dragon",
+      "race": "terran",
+      "elo": 3022
+    },
+    {
+      "name": "McRaveZ",
+      "race": "zerg",
+      "elo": 3010
+    },
+    {
+      "name": "Hao Pan",
+      "race": "terran",
+      "elo": 3001
+    },
+    {
+      "name": "Microwave",
+      "race": "zerg",
+      "elo": 2970
+    },
+    {
+      "name": "adias",
+      "race": "terran",
+      "elo": 2953
+    },
+    {
+      "name": "Randomhammer",
+      "race": "random",
+      "elo": 2900
+    },
+    {
+      "name": "Steamhammer",
+      "race": "zerg",
+      "elo": 2866
+    },
+    {
+      "name": "Iron bot",
+      "race": "terran",
+      "elo": 2864
+    },
+    {
+      "name": "MadMixP",
+      "race": "protoss",
+      "elo": 2853
+    },
+    {
+      "name": "WillyT",
+      "race": "terran",
+      "elo": 2783
+    },
+    {
+      "name": "XIAOYICOG2019",
+      "race": "terran",
+      "elo": 2742
+    },
+    {
+      "name": "NovotHammer",
+      "race": "zerg",
+      "elo": 2734
+    },
+    {
+      "name": "Proxy",
+      "race": "zerg",
+      "elo": 2730
+    },
+    {
+      "name": "CherryPiSSCAIT2017",
+      "race": "zerg",
+      "elo": 2724
+    },
+    {
+      "name": "Bereaver",
+      "race": "protoss",
+      "elo": 2706
+    },
+    {
+      "name": "HladHammer",
+      "race": "protoss",
+      "elo": 2706
+    },
+    {
+      "name": "Arrakhammer",
+      "race": "zerg",
+      "elo": 2687
+    },
+    {
+      "name": "Simplicity",
+      "race": "zerg",
+      "elo": 2682
+    },
+    {
+      "name": "MegaBot2017",
+      "race": "protoss",
+      "elo": 2672
+    },
+    {
+      "name": "tscmoo",
+      "race": "terran",
+      "elo": 2667
+    },
+    {
+      "name": "TyrProtoss",
+      "race": "protoss",
+      "elo": 2662
+    },
+    {
+      "name": "DaQin",
+      "race": "protoss",
+      "elo": 2655
+    },
+    {
+      "name": "Andrew Smith",
+      "race": "protoss",
+      "elo": 2653
+    },
+    {
+      "name": "MadMixR",
+      "race": "random",
+      "elo": 2628
+    },
+    {
+      "name": "Tomas Vajda",
+      "race": "protoss",
+      "elo": 2628
+    },
+    {
+      "name": "Venator",
+      "race": "protoss",
+      "elo": 2614
+    },
+    {
+      "name": "Sijia Xu",
+      "race": "zerg",
+      "elo": 2612
+    },
+    {
+      "name": "MisHanBot",
+      "race": "terran",
+      "elo": 2609
+    },
+    {
+      "name": "NLPRbot",
+      "race": "zerg",
+      "elo": 2606
+    },
+    {
+      "name": "VOID",
+      "race": "terran",
+      "elo": 2599
+    },
+    {
+      "name": "Chris Coxe",
+      "race": "zerg",
+      "elo": 2595
+    },
+    {
+      "name": "Martin Rooijackers",
+      "race": "terran",
+      "elo": 2583
+    },
+    {
+      "name": "WuliBot",
+      "race": "protoss",
+      "elo": 2583
+    },
+    {
+      "name": "legacy",
+      "race": "random",
+      "elo": 2582
+    },
+    {
+      "name": "AILien",
+      "race": "zerg",
+      "elo": 2569
+    },
+    {
+      "name": "Bryan Weber",
+      "race": "zerg",
+      "elo": 2558
+    },
+    {
+      "name": "Dave Churchill",
+      "race": "random",
+      "elo": 2555
+    },
+    {
+      "name": "ICELab",
+      "race": "terran",
+      "elo": 2544
+    },
+    {
+      "name": "liongis",
+      "race": "zerg",
+      "elo": 2544
+    },
+    {
+      "name": "BetaStar",
+      "race": "protoss",
+      "elo": 2538
+    },
+    {
+      "name": "insanitybot",
+      "race": "terran",
+      "elo": 2535
+    },
+    {
+      "name": "Pathos",
+      "race": "zerg",
+      "elo": 2529
+    },
+    {
+      "name": "Ecgberht",
+      "race": "terran",
+      "elo": 2503
+    },
+    {
+      "name": "StyxZ2",
+      "race": "zerg",
+      "elo": 2490
+    },
+    {
+      "name": "Flash",
+      "race": "protoss",
+      "elo": 2487
+    },
+    {
+      "name": "Prism Cactus",
+      "race": "protoss",
+      "elo": 2486
+    },
+    {
+      "name": "Junkbot",
+      "race": "terran",
+      "elo": 2485
+    },
+    {
+      "name": "ZurZurZur",
+      "race": "zerg",
+      "elo": 2478
+    },
+    {
+      "name": "Zia bot",
+      "race": "zerg",
+      "elo": 2476
+    },
+    {
+      "name": "Florian Richoux",
+      "race": "protoss",
+      "elo": 2472
+    },
+    {
+      "name": "MicRobot",
+      "race": "random",
+      "elo": 2468
+    },
+    {
+      "name": "MadMixZ",
+      "race": "zerg",
+      "elo": 2467
+    },
+    {
+      "name": "CUBOT",
+      "race": "zerg",
+      "elo": 2458
+    },
+    {
+      "name": "Tomas Cere",
+      "race": "protoss",
+      "elo": 2457
+    },
+    {
+      "name": "WillBot",
+      "race": "random",
+      "elo": 2454
+    },
+    {
+      "name": "Lukas Moravec",
+      "race": "protoss",
+      "elo": 2444
+    },
+    {
+      "name": "MadMixT",
+      "race": "terran",
+      "elo": 2443
+    },
+    {
+      "name": "PhantomMosquito",
+      "race": "terran",
+      "elo": 2437
+    },
+    {
+      "name": "Pineapple Cactus",
+      "race": "zerg",
+      "elo": 2432
+    },
+    {
+      "name": "Zealot Hell",
+      "race": "protoss",
+      "elo": 2422
+    },
+    {
+      "name": "Soeren Klett",
+      "race": "terran",
+      "elo": 2403
+    },
+    {
+      "name": "Velicorandom",
+      "race": "random",
+      "elo": 2383
+    },
+    {
+      "name": "NiteKatT",
+      "race": "terran",
+      "elo": 2379
+    },
+    {
+      "name": "KasoBot",
+      "race": "terran",
+      "elo": 2375
+    },
+    {
+      "name": "AlexCruiser",
+      "race": "terran",
+      "elo": 2374
+    },
+    {
+      "name": "Yuanheng Zhu",
+      "race": "protoss",
+      "elo": 2361
+    },
+    {
+      "name": "Infested Artosis",
+      "race": "zerg",
+      "elo": 2340
+    },
+    {
+      "name": "Sungguk Cha",
+      "race": "terran",
+      "elo": 2336
+    },
+    {
+      "name": "Slater",
+      "race": "protoss",
+      "elo": 2334
+    },
+    {
+      "name": "Zerg Hell",
+      "race": "zerg",
+      "elo": 2305
+    },
+    {
+      "name": "GrimHammer",
+      "race": "terran",
+      "elo": 2297
+    },
+    {
+      "name": "KaonBot",
+      "race": "terran",
+      "elo": 2295
+    },
+    {
+      "name": "Newbie Zerg",
+      "race": "zerg",
+      "elo": 2295
+    },
+    {
+      "name": "Matej Istenik",
+      "race": "terran",
+      "elo": 2293
+    },
+    {
+      "name": "Stone",
+      "race": "terran",
+      "elo": 2282
+    },
+    {
+      "name": "skyFORKnet",
+      "race": "protoss",
+      "elo": 2273
+    },
+    {
+      "name": "UTAProtoBot",
+      "race": "protoss",
+      "elo": 2249
+    },
+    {
+      "name": "pepper",
+      "race": "terran",
+      "elo": 2249
+    },
+    {
+      "name": "UITtest",
+      "race": "protoss",
+      "elo": 2237
+    },
+    {
+      "name": "RedRum",
+      "race": "terran",
+      "elo": 2232
+    },
+    {
+      "name": "EggBot",
+      "race": "protoss",
+      "elo": 2215
+    },
+    {
+      "name": "KillAlll",
+      "race": "zerg",
+      "elo": 2154
+    },
+    {
+      "name": "Aurelien Lermant",
+      "race": "zerg",
+      "elo": 2124
+    },
+    {
+      "name": "Marine Hell",
+      "race": "terran",
+      "elo": 2103
+    },
+    {
+      "name": "Feint",
+      "race": "terran",
+      "elo": 2075
+    },
+    {
+      "name": "Hopark",
+      "race": "zerg",
+      "elo": 2059
+    },
+    {
+      "name": "Pinfel 2",
+      "race": "protoss",
+      "elo": 2025
+    },
+    {
+      "name": "AmberZ",
+      "race": "zerg",
+      "elo": 2000
+    },
+    {
+      "name": "Polaris",
+      "race": "random",
+      "elo": 1995
+    },
+    {
+      "name": "ABCDxyz",
+      "race": "protoss",
+      "elo": 1975
+    },
+    {
+      "name": "NuiBot",
+      "race": "zerg",
+      "elo": 1915
+    },
+    {
+      "name": "Boris",
+      "race": "zerg",
+      "elo": 1835
+    },
+    {
+      "name": "StarCrusher",
+      "race": "protoss",
+      "elo": 1755
+    },
+    {
+      "name": "DTD Bot",
+      "race": "protoss",
+      "elo": 1743
+    },
+    {
+      "name": "JumpyDoggoBot",
+      "race": "zerg",
+      "elo": 1733
+    },
+    {
+      "name": "Fifou Legend",
+      "race": "protoss",
+      "elo": 1630
+    },
+    {
+      "name": "Delingvery",
+      "race": "zerg",
+      "elo": 1578
+    },
+    {
+      "name": "ForceBot",
+      "race": "zerg",
+      "elo": 1459
+    },
+    {
+      "name": "Jakub Trancik",
+      "race": "protoss",
+      "elo": 1132
+    }
+  ],
+  "maps": [
+    "2019Season1/(2)Cross Game.scx",
+    "2019Season1/(2)Overwatch(n).scx",
+    "2019Season1/(3)Medusa 2.2_iCCup.scx",
+    "2019Season1/(4)CircuitBreakers1.0.scx",
+    "2019Season1/(4)Colosseum 2.0_iCCup.scx",
+    "2019Season1/(4)Fighting Spirit.scx",
+    "2019Season1/(4)Ground_Zero_2.0_iCCup.scx",
+    "2019Season2/(2)Overwatch(n).scx",
+    "2019Season2/(2)Tres Pass.scx",
+    "2019Season2/(3)Power Bond.scx",
+    "2019Season2/(4)CircuitBreakers1.0.scx",
+    "2019Season2/(4)Fighting Spirit.scx",
+    "2019Season2/(4)Gladiator1.1.scx",
+    "sscai/(2)Benzene.scx",
+    "sscai/(2)Destination.scx",
+    "sscai/(2)Heartbreak Ridge.scx",
+    "sscai/(3)Neo Moon Glaive.scx",
+    "sscai/(3)Tau Cross.scx",
+    "sscai/(4)Andromeda.scx",
+    "sscai/(4)Circuit Breaker.scx",
+    "sscai/(4)Electric Circuit.scx",
+    "sscai/(4)Empire of the Sun.scm",
+    "sscai/(4)Fighting Spirit.scx",
+    "sscai/(4)Icarus.scm",
+    "sscai/(4)Jade.scx",
+    "sscai/(4)La Mancha1.1.scx",
+    "sscai/(4)Python.scx",
+    "sscai/(4)Roadrunner.scx"
+  ]
+}

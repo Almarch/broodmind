@@ -139,10 +139,10 @@ To launch a game:
 
 ```bash
 conda activate bw
-scbw.play --bots "Stardust" "PurpleSwarm" --map "sscai/(2)Benzene.scx" --headless --game_speed 0
+scbw.play --bots "Stardust" "PurpleWave" --map "sscai/(2)Benzene.scx" --headless --game_speed 0
 ```
 
-Launching [Stardust](https://github.com/bmnielsen/Stardust) versus [PurpleWave:Z](https://github.com/dgant/PurpleWave).
+Launching [Stardust](https://github.com/bmnielsen/Stardust) versus [PurpleWave](https://github.com/dgant/PurpleWave).
 
 `--game_speed` is BWAPI's `local_speed`, in milliseconds per frame: `0` runs as fast as the
 CPU allows (the working mode for batch evaluation), `42` matches the *fastest* competitive
@@ -151,7 +151,7 @@ speed and is what you want when watching over VNC.
 To watch a game instead of running it headless:
 
 ```bash
-scbw.play --bots "Stardust" "PurpleSwarm" --map "sscai/(2)Benzene.scx" --show_all --game_speed 42
+scbw.play --bots "Stardust" "PurpleWave" --map "sscai/(2)Benzene.scx" --show_all --game_speed 42
 ```
 
 In headful mode the map has to be selected manually in the lobby — a known
@@ -168,3 +168,13 @@ cp ~/.scbw/games/GAME_XXXXXXXX/player_0.rep "/path/to/StarCraft/maps/replays/"
 ```
 
 The map used for the game must also be present in the native installation.
+
+## Generate parties between existing bots
+
+First of all an inventory of all available bots and maps must be produced:
+```bash
+cd inventory
+python inventorize.py
+```
+
+
