@@ -129,8 +129,7 @@ sudo ln -s $(which vncviewer) /usr/local/bin/vnc-viewer
 Wine has started the server inside the container, producing *"the connection was dropped by
 the server before the session could be established"* — simply reconnect.
 
-
-## Running games
+### Running games
 
 Bots are resolved through `http://sscaitournament.com/api/bots.php`, downloaded on demand
 into `~/.scbw/bots/`, then mounted as volumes. Nothing bot-related lives inside the images,
@@ -157,6 +156,8 @@ scbw.play --bots "Stardust" "PurpleSwarm" --map "sscai/(2)Benzene.scx" --show_al
 
 In headful mode the map has to be selected manually in the lobby — a known
 *"Unable to distribute map"* bug. Create the game and the bots join on their own.
+
+### Viewing a replay
 
 Results, logs and replays land in `~/.scbw/games/GAME_XXXXXXXX/`. To watch a replay in a
 native (non-dockerized) StarCraft installation:
