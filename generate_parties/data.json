@@ -1,0 +1,57 @@
+{
+    "bots": {
+        "zerg": [
+            "Crona",
+            "Monster",
+            "McRaveZ",
+            "Microwave",
+            "Broken Horn",
+            "Steamhammer",
+            "CherryPi",
+            "PurpleSwarm",
+            "Marian Devecka",
+            "Proxy"
+        ],
+        "protoss": [
+            "Stardust",
+            "BananaBrain",
+            "PurpleWave",
+            "Locutus",
+            "Praetor Talis",
+            "MadMixP",
+            "McRave",
+            "HladHammer",
+            "Bereaver",
+            "TyrProtoss"
+        ],
+        "terran": [
+            "Brainiac",
+            "Terminus",
+            "Dragon",
+            "Hao Pan",
+            "adias",
+            "Iron bot",
+            "WillyT",
+            "XIAOYICOG2019",
+            "PurpleSpirit",
+            "tscmoo"
+        ]
+    },
+    "maps": [
+        "(2)Benzene.scx",
+        "(4)Andromeda.scx",
+        "(4)Icarus.scm",
+        "(2)Destination.scx",
+        "(4)Circuit Breaker.scx",
+        "(4)Jade.scx",
+        "(2)Heartbreak Ridge.scx",
+        "(4)Electric Circuit.scx",
+        "(4)La Mancha1.1.scx",
+        "(3)Neo Moon Glaive.scx",
+        "(4)Empire of the Sun.scm",
+        "(4)Python.scx",
+        "(3)Tau Cross.scx",
+        "(4)Fighting Spirit.scx",
+        "(4)Roadrunner.scx"
+    ]
+}
