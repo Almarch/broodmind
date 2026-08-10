@@ -193,11 +193,9 @@ cd ..
 The dumper module has to be built:
 
 ```bash
-docker build -t win32builder -f win32modules/win32builder.Dockerfile win32modules/
-docker run --rm \
-  -v $PWD/win32modules:/src \
-  -v ~/.scbw/bots/dumper/AI:/out \
-  win32builder make -C dumper
+make win32builder
+make dumper
+make clean
 ```
 
 ## License

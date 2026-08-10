@@ -1,2 +1,6 @@
 *.log
 *.rep
+*.obj
+*.lib
+*.dll
+*.exp

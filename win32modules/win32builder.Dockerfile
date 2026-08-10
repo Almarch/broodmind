@@ -42,8 +42,6 @@ RUN git clone --depth 1 https://github.com/mstorsjo/msvc-wine.git /opt/msvc-wine
     && ./install.sh /opt/msvc \
     && rm -rf /opt/msvc-wine
 
-ENV WINEPREFIX=/root/.wine
-ENV WINEDEBUG=-all
 # x86 wrappers: BWAPI and StarCraft 1.16.1 are both 32-bit.
 ENV PATH="/opt/msvc/bin/x86:${PATH}"
 
