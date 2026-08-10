@@ -169,12 +169,37 @@ cp ~/.scbw/games/GAME_XXXXXXXX/player_0.rep "/path/to/StarCraft/maps/replays/"
 
 The map used for the game must also be present in the native installation.
 
-## Generate parties between existing bots
+## Step 1 - supervised learning
+
+### Generate parties between existing bots
 
 First of all an inventory of all available bots and maps must be produced:
 ```bash
 cd inventory
 python inventorize.py
+cd ..
 ```
 
+Then, a set of parties can be launched:
 
+```bash
+cd play
+python play.py --cpu 16 --games 128 --elo-min 2500 --seed 42
+cd ..
+```
+
+### Extract the features from selected frames
+
+The dumper module has to be built:
+
+```bash
+docker build -t win32builder -f win32modules/win32builder.Dockerfile win32modules/
+docker run --rm \
+  -v $PWD/win32modules:/src \
+  -v ~/.scbw/bots/dumper/AI:/out \
+  win32builder make -C dumper
+```
+
+## License
+
+The license is MIT with an added condition that forks may not be submitted to StarCraft AI competitions without written consent of the author.
