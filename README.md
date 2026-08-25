@@ -8,18 +8,13 @@ An AI learning to play BroodWar.
 
 Blizzard officially made free SCBW v1.16.1, however the remaining challenge is to have it running on a modern computer. The game (portable version) may be found on [archive.org](https://archive.org/details/sc-classic-installer_202311).
 
-On a Linux x86 platform:
-
-- rename `StarCraft ( Click here ).exe` into `StarCraft.exe`,
-- use [Chaoslauncher](https://github.com/MasterOfChaos/Chaoslauncher):
+On a Linux x86 platform, use [Chaoslauncher](https://github.com/MasterOfChaos/Chaoslauncher):
 
 ```sh
 wine /path/to/the/game/Starcraft\ Brood\ War/Chaoslauncher.exe
 ```
 
-- define the path to `StarCraft.exe` from the Settings tab,
-- activate W-MODE 1.02,
-- launch the game.
+Define the path to `StarCraft.exe` from the Settings tab, activate W-MODE 1.02 and launch the game.
 
 Having a working SCBW version is especially meaningful to watch replays and follow the progression of the bot.
 
@@ -29,7 +24,6 @@ Having a working SCBW version is especially meaningful to watch replays and foll
 
 ```bash
 git clone https://github.com/basil-ladder/sc-docker
-cd sc-docker
 ```
 
 Use the `basil-ladder` fork, not the original `Games-and-Simulations` upstream: the
@@ -102,7 +96,7 @@ The `starcraft.zip` archive contains the exact following arborescence:
 Build all images using the `build_images.sh` helper:
 
 ```bash
-cd docker
+cd /path/to/sc-docker/docker
 ./build_images.sh 2>&1 | tee /tmp/build.log
 ```
 
@@ -114,7 +108,7 @@ Install the Python wrapper in a virtual environment:
 conda create -n bw python=3.10 -y
 conda activate bw
 cd /path/to/sc-docker
-pip install .
+python -m pip install .
 ```
 
 ### Create the Docker network
