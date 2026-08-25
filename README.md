@@ -1,6 +1,23 @@
-# broodmind
+# BroodMind
 An AI learning to play BroodWar.
 
+## Play StarCraft: BroodWar
+
+Blizzard officially made free SCBW v1.16.1, however the remaining challenge is to have it running on a modern computer. The game (portable version) may be found on [archive.org](https://archive.org/details/sc-classic-installer_202311).
+
+On a Linux x86 platform:
+
+- rename `StarCraft ( Click here ).exe` into `StarCraft.exe`,
+- use [Chaoslauncher](https://github.com/MasterOfChaos/Chaoslauncher):
+
+```sh
+wine /path/to/the/game/Starcraft\ Brood\ War/Chaoslauncher.exe
+```
+
+- activate W-MODE,
+- launch the game.
+
+Having a working SCBW version is especially meaningful to watch replays and follow the progression of the bot.
 
 ## Install sc-docker
 
@@ -16,16 +33,14 @@ former is the one maintained for the BASIL ladder and has updated Wine and Java 
 
 ### Provide the game files
 
-The game has been made freely available by Blizzard, however they updated the version and BWAPI requires v1.16.1. The build script tries to download the game from `http://files.theabyss.ru/sc/starcraft.zip`, a host that no longer resolves. The appropriate version may be found on [archive.org](https://archive.org/details/sc-classic-installer_202311).
-
-Files must sit at the archive root: 
+The build script tries to download the game from `http://files.theabyss.ru/sc/starcraft.zip`, a host that no longer resolves. From the [archive.org](https://archive.org/details/sc-classic-installer_202311) portable game version, the file should be formatted in the expected form, zipped and positionned in the appropriate folder:
 
 ```bash
 cd /path/to/game/files/starcraft
 zip -r /path/to/repo/sc-docker/scbw/local_docker/starcraft.zip .
 ```
 
-The `starcraft.zip` archive contains the following arborescence:
+The `starcraft.zip` archive contains the exact following arborescence:
 ```
 .
 ├── Ashworld.pal
@@ -95,7 +110,7 @@ Install the Python wrapper in a virtual environment:
 conda create -n bw python=3.10 -y
 conda activate bw
 cd /path/to/sc-docker
-pip install -e .
+pip install .
 ```
 
 ### Create the Docker network
@@ -124,10 +139,6 @@ caches. These come from GitHub Releases and are still available.
 sudo apt install tigervnc-viewer
 sudo ln -s $(which vncviewer) /usr/local/bin/vnc-viewer
 ```
-
-`scbw` looks for a binary named `vnc-viewer` in `PATH`. The viewer often connects before
-Wine has started the server inside the container, producing *"the connection was dropped by
-the server before the session could be established"* — simply reconnect.
 
 ### Running games
 
@@ -164,7 +175,7 @@ native (non-dockerized) StarCraft installation:
 
 ```bash
 mkdir -p "/path/to/StarCraft/maps/replays"
-cp ~/.scbw/games/GAME_XXXXXXXX/player_0.rep "/path/to/StarCraft/maps/replays/"
+cp ~/.scbw/games/GAME_XXXXXXXX/player_0.rep "/path/to/the/game/Starcraft\ Brood\ War/maps/replays/"
 ```
 
 The map used for the game must also be present in the native installation.
@@ -196,6 +207,8 @@ The dumper module has to be built:
 make win32builder
 make dumper
 make clean
+make bwapi
+make install
 ```
 
 ## License
