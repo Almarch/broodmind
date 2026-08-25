@@ -1,4 +1,7 @@
 # BroodMind
+
+<img width="70" align="right" alt="broodmind" src="https://github.com/user-attachments/assets/79d46c6c-89e1-49e6-a0ab-e8c45a2d85c2" />
+
 An AI learning to play BroodWar.
 
 ## Play StarCraft: BroodWar
