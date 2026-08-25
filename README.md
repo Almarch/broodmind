@@ -17,7 +17,8 @@ On a Linux x86 platform:
 wine /path/to/the/game/Starcraft\ Brood\ War/Chaoslauncher.exe
 ```
 
-- activate W-MODE,
+- define the path to `StarCraft.exe` from the Settings tab,
+- activate W-MODE 1.02,
 - launch the game.
 
 Having a working SCBW version is especially meaningful to watch replays and follow the progression of the bot.
