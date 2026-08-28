@@ -178,7 +178,7 @@ cp ~/.scbw/games/GAME_XXXXXXXX/player_0.rep "/path/to/the/game/Starcraft\ Brood\
 
 The map used for the game must also be present in the native installation.
 
-## Step 1 - Train the critics
+## Step 1 - Train the critic
 
 ### Generate parties between existing bots
 
@@ -193,7 +193,7 @@ Then, a set of parties can be launched:
 
 ```bash
 cd play
-python play.py --cpu 8 --games 32 --seed 42
+python play.py --cpu 8 --games 32 --seed 42 --elo-min 2300
 cd ..
 ```
 
@@ -208,6 +208,8 @@ make clean
 make bwapi
 make install
 ```
+
+## Step 2 - Train the actor
 
 ## License
 

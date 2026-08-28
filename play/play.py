@@ -85,9 +85,8 @@ def sample_jobs(pool_a, pool_b, maps, n, rng):
 def init_metadata():
     """Create the metadata file with its header if it does not exist yet."""
     REPLAY_DIR.mkdir(parents=True, exist_ok=True)
-    if not METADATA_PATH.exists():
-        with METADATA_PATH.open("w", newline="") as f:
-            csv.DictWriter(f, METADATA_FIELDS).writeheader()
+    with METADATA_PATH.open("w", newline="") as f:
+        csv.DictWriter(f, METADATA_FIELDS).writeheader()
 
 
 def archive(job, result):
@@ -147,6 +146,7 @@ def run_game(job):
         "--game_speed", "0",
         "--timeout", str(GAME_TIMEOUT_S),
         "--read_overwrite",
+        "--nano_cpus", "1000000000",
     ]
     try:
         subprocess.run(
@@ -163,7 +163,7 @@ def run_game(job):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--cpu", type=int, default=20, help="parallel games")
+    parser.add_argument("--cpu", type=int, default=20, help="parallelisation, 1 game takes 2 cpu")
     parser.add_argument("--games", type=int, default=100, help="games to run")
     parser.add_argument("--seed", type=int, default=None, help="sampling seed")
     parser.add_argument("--races", default=None,
@@ -182,7 +182,7 @@ def main():
     jobs = sample_jobs(pool_a, pool_b, maps, args.games, rng)
 
     counts = {"kept": 0, "dropped": 0}
-    with ThreadPoolExecutor(max_workers=args.cpu) as pool:
+    with ThreadPoolExecutor(max_workers=max(1,args.cpu // 2)) as pool:
         for i, status in enumerate(pool.map(run_game, jobs), 1):
             counts[status] += 1
             print(f"{i}/{args.games}  kept={counts['kept']} "
