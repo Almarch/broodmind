@@ -1,6 +1,6 @@
 # BroodMind
 
-<img width="70" align="right" alt="broodmind" src="https://github.com/user-attachments/assets/79d46c6c-89e1-49e6-a0ab-e8c45a2d85c2" />
+<img width="70" align="right" alt="broodmind" src="https://github.com/user-attachments/assets/3d250936-9769-495d-a67e-0e8a08e9596e" />
 
 An AI learning to play BroodWar.
 
