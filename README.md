@@ -2,7 +2,7 @@
 
 <img width="70" align="right" alt="broodmind" src="https://github.com/user-attachments/assets/3d250936-9769-495d-a67e-0e8a08e9596e" />
 
-An AI learning to play BroodWar.
+An AI learning to control the Swarm using reinforcement learning.
 
 ## Play StarCraft: BroodWar
 
@@ -39,6 +39,9 @@ zip -r /path/to/repo/sc-docker/scbw/local_docker/starcraft.zip .
 ```
 
 The `starcraft.zip` archive contains the exact following arborescence:
+
+<details>
+  
 ```
 .
 ├── Ashworld.pal
@@ -90,6 +93,8 @@ The `starcraft.zip` archive contains the exact following arborescence:
 ├── ZergLoss.pal
 └── ZergWin.pal
 ```
+
+</details>
 
 ### Build the images
 
