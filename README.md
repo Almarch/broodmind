@@ -4,9 +4,14 @@
 
 An AI learning to control the Swarm using reinforcement learning.
 
-## Play StarCraft: BroodWar
+<details><summary>Play BroodWar v1.16.1</summary>
+</br>
 
-Blizzard officially made free SCBW v1.16.1, however the remaining challenge is to have it running on a modern computer. The game (portable version) may be found on [archive.org](https://archive.org/details/sc-classic-installer_202311).
+Blizzard officially made free StarCraft BroodWar, however the remaining challenge is to have it running on a modern computer.
+
+Especially, the whole AI competition ecosystem is built upon the canonical v1.16.1, which is no longer distributed.
+
+A portable version of SCBW v1.16.1 may be found on [archive.org](https://archive.org/details/sc-classic-installer_202311). Rename `StarCraft ( Click here ).exe` to `StarCraft.exe`.
 
 On a Linux x86 platform, use [Chaoslauncher](https://github.com/MasterOfChaos/Chaoslauncher):
 
@@ -16,20 +21,19 @@ wine /path/to/the/game/Starcraft\ Brood\ War/Chaoslauncher.exe
 
 Define the path to `StarCraft.exe` from the Settings tab, activate W-MODE 1.02 and launch the game.
 
-Having a working SCBW version is especially meaningful to watch replays and follow the progression of the bot.
+Having a working SCBW version is especially important to watch replays and follow the progression of the bot.
 
-## Install sc-docker
+</details>
 
-### Clone the repository
+## Set up the work station
+
+### Build `sc-docker`
+
+Clone the `sc-docker` repository from the [Basil-Ladder](https://github.com/basil-ladder/sc-docker) fork:
 
 ```bash
 git clone https://github.com/basil-ladder/sc-docker
 ```
-
-Use the `basil-ladder` fork, not the original `Games-and-Simulations` upstream: the
-former is the one maintained for the BASIL ladder and has updated Wine and Java layers.
-
-### Provide the game files
 
 The build script tries to download the game from `http://files.theabyss.ru/sc/starcraft.zip`, a host that no longer resolves. From the [archive.org](https://archive.org/details/sc-classic-installer_202311) portable game version, the file should be formatted in the expected form, zipped and positionned in the appropriate folder:
 
@@ -38,10 +42,10 @@ cd /path/to/game/files/starcraft
 zip -r /path/to/repo/sc-docker/scbw/local_docker/starcraft.zip .
 ```
 
-The `starcraft.zip` archive contains the exact following arborescence:
+The archive contains the exact following arborescence:
 
-<details>
-  
+<details><summary><code>starcraft.zip</code></summary>
+
 ```
 .
 ├── Ashworld.pal
@@ -95,14 +99,19 @@ The `starcraft.zip` archive contains the exact following arborescence:
 ```
 
 </details>
-
-### Build the images
+</br>
 
 Build all images using the `build_images.sh` helper:
 
 ```bash
 cd /path/to/sc-docker/docker
 ./build_images.sh 2>&1 | tee /tmp/build.log
+```
+
+Finally, create a dedicated docker network:
+
+```bash
+docker network create sc_net
 ```
 
 ### Install the Python wrapper
@@ -116,18 +125,7 @@ cd /path/to/sc-docker
 python -m pip install .
 ```
 
-### Create the Docker network
-
-`scbw` hardcodes a subnet for its `sc_net` network and has no fallback, so it fails with
-`Pool overlaps with other one on this address space` if another Docker network already
-occupies that range. Creating the network first lets Docker pick a free subnet, and
-`ensure_local_net` then finds it by name and skips creation:
-
-```bash
-docker network create sc_net
-```
-
-### Fetch maps and BWTA caches
+Fetch all maps and the BWTA caches:
 
 ```bash
 scbw.play --install
@@ -136,12 +134,6 @@ scbw.play --install
 This populates `~/.scbw/` with the SSCAI map pack, the 2019 season maps and the BWTA
 caches. These come from GitHub Releases and are still available.
 
-### Optional: VNC viewer for headful mode
-
-```bash
-sudo apt install tigervnc-viewer
-sudo ln -s $(which vncviewer) /usr/local/bin/vnc-viewer
-```
 
 ### Running games
 
@@ -156,32 +148,16 @@ conda activate bw
 scbw.play --bots "Stardust" "PurpleWave" --map "sscai/(2)Benzene.scx" --headless --game_speed 0
 ```
 
-Launching [Stardust](https://github.com/bmnielsen/Stardust) versus [PurpleWave](https://github.com/dgant/PurpleWave).
+Launching [Stardust](https://github.com/bmnielsen/Stardust) versus [PurpleWave](https://github.com/dgant/PurpleWave) in this illustrative example.
 
-`--game_speed` is BWAPI's `local_speed`, in milliseconds per frame: `0` runs as fast as the
-CPU allows (the working mode for batch evaluation), `42` matches the *fastest* competitive
-speed and is what you want when watching over VNC.
-
-To watch a game instead of running it headless:
-
-```bash
-scbw.play --bots "Stardust" "PurpleWave" --map "sscai/(2)Benzene.scx" --show_all --game_speed 42
-```
-
-In headful mode the map has to be selected manually in the lobby — a known
-*"Unable to distribute map"* bug. Create the game and the bots join on their own.
-
-### Viewing a replay
-
-Results, logs and replays land in `~/.scbw/games/GAME_XXXXXXXX/`. To watch a replay in a
-native (non-dockerized) StarCraft installation:
+Results, logs and replays land in `~/.scbw/games/GAME_XXXXXXXX/`. To watch a replay in a native (non-dockerized) StarCraft installation:
 
 ```bash
 mkdir -p "/path/to/StarCraft/maps/replays"
 cp ~/.scbw/games/GAME_XXXXXXXX/player_0.rep "/path/to/the/game/Starcraft\ Brood\ War/maps/replays/"
 ```
 
-The map used for the game must also be present in the native installation.
+The map used for the game must also be present in `/path/to/the/game/Starcraft\ Brood\ War/maps/sscai/`
 
 ## Step 1 - Train the critic
 
