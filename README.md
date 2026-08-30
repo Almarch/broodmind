@@ -31,10 +31,10 @@ Having a working SCBW version is especially important to watch replays and follo
 
 ### Build `sc-docker`
 
-Clone the `sc-docker` repository from the [Basil-Ladder](https://github.com/basil-ladder/sc-docker) fork:
+A custom `sc-docker` fork is provided as a submodule:
 
-```bash
-git clone https://github.com/basil-ladder/sc-docker
+```sh
+git submodule update --init --recursive
 ```
 
 The build script tries to download the game from `http://files.theabyss.ru/sc/starcraft.zip`, a host that no longer resolves. From the [archive.org](https://archive.org/details/sc-classic-installer_202311) portable game version, the file should be formatted in the expected form, zipped and positionned in the appropriate folder:

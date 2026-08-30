@@ -1,0 +1,3 @@
+[submodule "sc-docker"]
+	path = sc-docker
+	url = https://github.com/Almarch/sc-docker.git
