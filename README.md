@@ -1,4 +1,6 @@
-# BroodMind
+# 🚧 This is a work in progress
+
+# BroodMind 
 
 <img width="70" align="right" alt="broodmind" src="https://github.com/user-attachments/assets/3d250936-9769-495d-a67e-0e8a08e9596e" />
 
