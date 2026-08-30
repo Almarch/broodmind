@@ -3,147 +3,132 @@
     {
       "name": "Stardust",
       "race": "protoss",
-      "elo": 3426
+      "elo": 3442
     },
     {
       "name": "BananaBrain",
       "race": "protoss",
-      "elo": 3222
-    },
-    {
-      "name": "PurpleWave",
-      "race": "protoss",
-      "elo": 3158
-    },
-    {
-      "name": "Brainiac",
-      "race": "random",
-      "elo": 3139
+      "elo": 3233
     },
     {
       "name": "Crona",
       "race": "zerg",
-      "elo": 3104
+      "elo": 3171
+    },
+    {
+      "name": "Brainiac",
+      "race": "random",
+      "elo": 3158
     },
     {
       "name": "Monster",
       "race": "zerg",
-      "elo": 3096
+      "elo": 3137
     },
     {
-      "name": "Locutus",
+      "name": "PurpleWave",
       "race": "protoss",
-      "elo": 3073
+      "elo": 3130
     },
     {
       "name": "Terminus",
       "race": "terran",
-      "elo": 3043
+      "elo": 3122
     },
     {
-      "name": "Dragon",
-      "race": "terran",
-      "elo": 3022
-    },
-    {
-      "name": "McRaveZ",
-      "race": "zerg",
-      "elo": 3010
-    },
-    {
-      "name": "Hao Pan",
-      "race": "terran",
-      "elo": 3001
-    },
-    {
-      "name": "Microwave",
-      "race": "zerg",
-      "elo": 2970
+      "name": "Locutus",
+      "race": "protoss",
+      "elo": 3089
     },
     {
       "name": "adias",
       "race": "terran",
-      "elo": 2953
+      "elo": 3014
+    },
+    {
+      "name": "McRaveZ",
+      "race": "zerg",
+      "elo": 2955
+    },
+    {
+      "name": "Dragon",
+      "race": "terran",
+      "elo": 2932
+    },
+    {
+      "name": "Hao Pan",
+      "race": "terran",
+      "elo": 2925
+    },
+    {
+      "name": "Microwave",
+      "race": "zerg",
+      "elo": 2902
     },
     {
       "name": "Randomhammer",
       "race": "random",
-      "elo": 2900
+      "elo": 2888
     },
     {
       "name": "Steamhammer",
       "race": "zerg",
-      "elo": 2866
-    },
-    {
-      "name": "Iron bot",
-      "race": "terran",
-      "elo": 2864
-    },
-    {
-      "name": "MadMixP",
-      "race": "protoss",
-      "elo": 2853
+      "elo": 2867
     },
     {
       "name": "WillyT",
       "race": "terran",
-      "elo": 2783
+      "elo": 2824
     },
     {
-      "name": "XIAOYICOG2019",
+      "name": "Iron bot",
       "race": "terran",
-      "elo": 2742
-    },
-    {
-      "name": "NovotHammer",
-      "race": "zerg",
-      "elo": 2734
-    },
-    {
-      "name": "Proxy",
-      "race": "zerg",
-      "elo": 2730
+      "elo": 2819
     },
     {
       "name": "CherryPiSSCAIT2017",
       "race": "zerg",
-      "elo": 2724
+      "elo": 2815
     },
     {
-      "name": "Bereaver",
+      "name": "MadMixP",
       "race": "protoss",
-      "elo": 2706
+      "elo": 2810
     },
     {
-      "name": "HladHammer",
-      "race": "protoss",
-      "elo": 2706
+      "name": "XIAOYICOG2019",
+      "race": "terran",
+      "elo": 2790
+    },
+    {
+      "name": "Proxy",
+      "race": "zerg",
+      "elo": 2780
+    },
+    {
+      "name": "NovotHammer",
+      "race": "zerg",
+      "elo": 2717
     },
     {
       "name": "Arrakhammer",
       "race": "zerg",
-      "elo": 2687
+      "elo": 2695
     },
     {
       "name": "Simplicity",
       "race": "zerg",
-      "elo": 2682
+      "elo": 2694
     },
     {
-      "name": "MegaBot2017",
+      "name": "WuliBot",
       "race": "protoss",
-      "elo": 2672
+      "elo": 2691
     },
     {
-      "name": "tscmoo",
-      "race": "terran",
-      "elo": 2667
-    },
-    {
-      "name": "TyrProtoss",
+      "name": "Bereaver",
       "race": "protoss",
-      "elo": 2662
+      "elo": 2669
     },
     {
       "name": "DaQin",
@@ -151,89 +136,99 @@
       "elo": 2655
     },
     {
-      "name": "Andrew Smith",
-      "race": "protoss",
-      "elo": 2653
-    },
-    {
-      "name": "MadMixR",
-      "race": "random",
-      "elo": 2628
-    },
-    {
-      "name": "Tomas Vajda",
-      "race": "protoss",
-      "elo": 2628
+      "name": "liongis",
+      "race": "zerg",
+      "elo": 2640
     },
     {
       "name": "Venator",
       "race": "protoss",
-      "elo": 2614
+      "elo": 2638
     },
     {
-      "name": "Sijia Xu",
-      "race": "zerg",
-      "elo": 2612
+      "name": "TyrProtoss",
+      "race": "protoss",
+      "elo": 2637
     },
     {
-      "name": "MisHanBot",
-      "race": "terran",
-      "elo": 2609
-    },
-    {
-      "name": "NLPRbot",
-      "race": "zerg",
-      "elo": 2606
-    },
-    {
-      "name": "VOID",
-      "race": "terran",
-      "elo": 2599
+      "name": "Tomas Vajda",
+      "race": "protoss",
+      "elo": 2630
     },
     {
       "name": "Chris Coxe",
       "race": "zerg",
-      "elo": 2595
+      "elo": 2624
     },
     {
-      "name": "Martin Rooijackers",
-      "race": "terran",
-      "elo": 2583
-    },
-    {
-      "name": "WuliBot",
+      "name": "Andrew Smith",
       "race": "protoss",
-      "elo": 2583
+      "elo": 2621
     },
     {
-      "name": "legacy",
-      "race": "random",
-      "elo": 2582
+      "name": "HladHammer",
+      "race": "protoss",
+      "elo": 2617
+    },
+    {
+      "name": "tscmoo",
+      "race": "terran",
+      "elo": 2615
+    },
+    {
+      "name": "MegaBot2017",
+      "race": "protoss",
+      "elo": 2599
+    },
+    {
+      "name": "NLPRbot",
+      "race": "zerg",
+      "elo": 2592
     },
     {
       "name": "AILien",
       "race": "zerg",
-      "elo": 2569
+      "elo": 2586
+    },
+    {
+      "name": "VOID",
+      "race": "terran",
+      "elo": 2582
+    },
+    {
+      "name": "MisHanBot",
+      "race": "terran",
+      "elo": 2578
+    },
+    {
+      "name": "insanitybot",
+      "race": "terran",
+      "elo": 2572
+    },
+    {
+      "name": "MadMixR",
+      "race": "random",
+      "elo": 2571
+    },
+    {
+      "name": "Martin Rooijackers",
+      "race": "terran",
+      "elo": 2562
+    },
+    {
+      "name": "Polaris",
+      "race": "random",
+      "elo": 2562
     },
     {
       "name": "Bryan Weber",
       "race": "zerg",
-      "elo": 2558
+      "elo": 2541
     },
     {
       "name": "Dave Churchill",
       "race": "random",
-      "elo": 2555
-    },
-    {
-      "name": "ICELab",
-      "race": "terran",
-      "elo": 2544
-    },
-    {
-      "name": "liongis",
-      "race": "zerg",
-      "elo": 2544
+      "elo": 2540
     },
     {
       "name": "BetaStar",
@@ -241,24 +236,39 @@
       "elo": 2538
     },
     {
-      "name": "insanitybot",
+      "name": "Sijia Xu",
+      "race": "zerg",
+      "elo": 2533
+    },
+    {
+      "name": "Florian Richoux",
+      "race": "protoss",
+      "elo": 2531
+    },
+    {
+      "name": "Zealot Hell",
+      "race": "protoss",
+      "elo": 2526
+    },
+    {
+      "name": "legacy",
+      "race": "random",
+      "elo": 2526
+    },
+    {
+      "name": "ZurZurZur",
+      "race": "zerg",
+      "elo": 2524
+    },
+    {
+      "name": "ICELab",
       "race": "terran",
-      "elo": 2535
+      "elo": 2523
     },
     {
       "name": "Pathos",
       "race": "zerg",
-      "elo": 2529
-    },
-    {
-      "name": "Ecgberht",
-      "race": "terran",
-      "elo": 2503
-    },
-    {
-      "name": "StyxZ2",
-      "race": "zerg",
-      "elo": 2490
+      "elo": 2522
     },
     {
       "name": "Flash",
@@ -266,84 +276,89 @@
       "elo": 2487
     },
     {
-      "name": "Prism Cactus",
-      "race": "protoss",
-      "elo": 2486
-    },
-    {
-      "name": "Junkbot",
+      "name": "Ecgberht",
       "race": "terran",
-      "elo": 2485
-    },
-    {
-      "name": "ZurZurZur",
-      "race": "zerg",
-      "elo": 2478
-    },
-    {
-      "name": "Zia bot",
-      "race": "zerg",
-      "elo": 2476
-    },
-    {
-      "name": "Florian Richoux",
-      "race": "protoss",
-      "elo": 2472
+      "elo": 2484
     },
     {
       "name": "MicRobot",
       "race": "random",
-      "elo": 2468
+      "elo": 2483
     },
     {
-      "name": "MadMixZ",
-      "race": "zerg",
-      "elo": 2467
+      "name": "Prism Cactus",
+      "race": "protoss",
+      "elo": 2481
+    },
+    {
+      "name": "PurpleCheese",
+      "race": "random",
+      "elo": 2471
     },
     {
       "name": "CUBOT",
       "race": "zerg",
-      "elo": 2458
-    },
-    {
-      "name": "Tomas Cere",
-      "race": "protoss",
-      "elo": 2457
-    },
-    {
-      "name": "WillBot",
-      "race": "random",
-      "elo": 2454
-    },
-    {
-      "name": "Lukas Moravec",
-      "race": "protoss",
-      "elo": 2444
+      "elo": 2470
     },
     {
       "name": "MadMixT",
       "race": "terran",
-      "elo": 2443
+      "elo": 2461
+    },
+    {
+      "name": "MadMixZ",
+      "race": "zerg",
+      "elo": 2457
+    },
+    {
+      "name": "Junkbot",
+      "race": "terran",
+      "elo": 2452
+    },
+    {
+      "name": "NiteKatT",
+      "race": "terran",
+      "elo": 2451
+    },
+    {
+      "name": "StyxZ2",
+      "race": "zerg",
+      "elo": 2445
+    },
+    {
+      "name": "Slater",
+      "race": "protoss",
+      "elo": 2441
+    },
+    {
+      "name": "Lukas Moravec",
+      "race": "protoss",
+      "elo": 2417
     },
     {
       "name": "PhantomMosquito",
       "race": "terran",
-      "elo": 2437
+      "elo": 2414
+    },
+    {
+      "name": "WillBot",
+      "race": "random",
+      "elo": 2408
     },
     {
       "name": "Pineapple Cactus",
       "race": "zerg",
-      "elo": 2432
-    },
-    {
-      "name": "Zealot Hell",
-      "race": "protoss",
-      "elo": 2422
+      "elo": 2402
     },
     {
       "name": "Soeren Klett",
       "race": "terran",
-      "elo": 2403
+      "elo": 2398
+    },
+    {
+      "name": "Zia bot",
+      "race": "zerg",
+      "elo": 2398
     },
     {
       "name": "Velicorandom",
@@ -351,54 +366,34 @@
       "elo": 2383
     },
     {
-      "name": "NiteKatT",
-      "race": "terran",
-      "elo": 2379
+      "name": "Infested Artosis",
+      "race": "zerg",
+      "elo": 2381
     },
     {
-      "name": "KasoBot",
-      "race": "terran",
-      "elo": 2375
+      "name": "Tomas Cere",
+      "race": "protoss",
+      "elo": 2379
     },
     {
       "name": "AlexCruiser",
       "race": "terran",
-      "elo": 2374
+      "elo": 2345
     },
     {
       "name": "Yuanheng Zhu",
       "race": "protoss",
-      "elo": 2361
-    },
-    {
-      "name": "Infested Artosis",
-      "race": "zerg",
-      "elo": 2340
-    },
-    {
-      "name": "Sungguk Cha",
-      "race": "terran",
-      "elo": 2336
-    },
-    {
-      "name": "Slater",
-      "race": "protoss",
-      "elo": 2334
+      "elo": 2338
     },
     {
       "name": "Zerg Hell",
       "race": "zerg",
-      "elo": 2305
+      "elo": 2314
     },
     {
-      "name": "GrimHammer",
-      "race": "terran",
-      "elo": 2297
-    },
-    {
-      "name": "KaonBot",
-      "race": "terran",
-      "elo": 2295
+      "name": "UTAProtoBot",
+      "race": "protoss",
+      "elo": 2306
     },
     {
       "name": "Newbie Zerg",
@@ -406,14 +401,14 @@
       "elo": 2295
     },
     {
-      "name": "Matej Istenik",
+      "name": "GrimHammer",
       "race": "terran",
-      "elo": 2293
+      "elo": 2288
     },
     {
-      "name": "Stone",
+      "name": "KasoBot",
       "race": "terran",
-      "elo": 2282
+      "elo": 2275
     },
     {
       "name": "skyFORKnet",
@@ -421,14 +416,24 @@
       "elo": 2273
     },
     {
-      "name": "UTAProtoBot",
-      "race": "protoss",
-      "elo": 2249
+      "name": "Matej Istenik",
+      "race": "terran",
+      "elo": 2272
     },
     {
-      "name": "pepper",
+      "name": "Stone",
       "race": "terran",
-      "elo": 2249
+      "elo": 2268
+    },
+    {
+      "name": "Sungguk Cha",
+      "race": "terran",
+      "elo": 2255
+    },
+    {
+      "name": "KaonBot",
+      "race": "terran",
+      "elo": 2237
     },
     {
       "name": "UITtest",
@@ -443,7 +448,12 @@
     {
       "name": "EggBot",
       "race": "protoss",
-      "elo": 2215
+      "elo": 2207
+    },
+    {
+      "name": "pepper",
+      "race": "terran",
+      "elo": 2199
     },
     {
       "name": "KillAlll",
@@ -453,12 +463,7 @@
     {
       "name": "Aurelien Lermant",
       "race": "zerg",
-      "elo": 2124
-    },
-    {
-      "name": "Marine Hell",
-      "race": "terran",
-      "elo": 2103
+      "elo": 2138
     },
     {
       "name": "Feint",
@@ -476,14 +481,14 @@
       "elo": 2025
     },
     {
+      "name": "Marine Hell",
+      "race": "terran",
+      "elo": 2018
+    },
+    {
       "name": "AmberZ",
       "race": "zerg",
       "elo": 2000
-    },
-    {
-      "name": "Polaris",
-      "race": "random",
-      "elo": 1995
     },
     {
       "name": "ABCDxyz",
