@@ -1,3 +1,6 @@
 [submodule "sc-docker"]
 	path = sc-docker
-	url = https://github.com/Almarch/sc-docker.git
+	url = https://github.com/basil-ladder/sc-docker.git
+[submodule "bwheadless"]
+	path = bwheadless
+	url = https://github.com/Almarch/bwheadless

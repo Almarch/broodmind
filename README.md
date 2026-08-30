@@ -31,8 +31,6 @@ Having a working SCBW version is especially important to watch replays and follo
 
 ### Build `sc-docker`
 
-A custom `sc-docker` fork is provided as a submodule:
-
 ```sh
 git submodule update --init --recursive
 ```
