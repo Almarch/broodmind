@@ -174,7 +174,7 @@ Then, a set of parties can be launched:
 
 ```bash
 cd play
-python play.py --cpu 8 --games 32 --seed 42 --elo-min 2300
+python play.py --cpu 16 --games 64 --seed 42 --elo-min 2300
 cd ..
 ```
 

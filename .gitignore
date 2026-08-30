@@ -4,3 +4,5 @@
 *.lib
 *.dll
 *.exp
+*.md
+!README.md
