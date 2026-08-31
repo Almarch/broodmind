@@ -31,10 +31,8 @@ Having a working SCBW version is especially important to watch replays and follo
 
 ### Build `sc-docker`
 
-Clone the `sc-docker` repository from the [Basil-Ladder](https://github.com/basil-ladder/sc-docker) fork:
-
-```bash
-git clone https://github.com/basil-ladder/sc-docker
+```sh
+git submodule update --init --recursive
 ```
 
 The build script tries to download the game from `http://files.theabyss.ru/sc/starcraft.zip`, a host that no longer resolves. From the [archive.org](https://archive.org/details/sc-classic-installer_202311) portable game version, the file should be formatted in the expected form, zipped and positionned in the appropriate folder:
@@ -182,15 +180,31 @@ cd ..
 
 ### Extract the features from selected frames
 
-The dumper module has to be built:
+The analysis pipeline replays a saved `.rep` inside the `starcraft:analyze`
+Docker image and extracts, for each player, the economy features at a set of
+target frames: current minerals, gas, supply used/total, cumulative minerals
+and gas, and worker count. Both players are sampled (perfect information, no
+fog of war).
+
+First build the image (this compiles the BWAPI dumper and copies the built
+`bwheadless` launcher into a small image derived from `starcraft:game`):
 
 ```bash
-make win32builder
-make dumper
-make clean
-make bwapi
-make install
+make analyze-image
 ```
+
+Then extract the features of all replays:
+
+```bash
+cd analyze
+python analyze.py --replay ../play/parties --frames 7200 14400 21600 28800 36000 43200 --cpu 16
+cd ..
+```
+
+The result is written to `analyze/features/0a9c02acedea4d3b.json`: general
+match information at the top level (`map`, `winner`, the latter taken from
+`play/metadata.csv`), then the list of sampled frames, each frame holding a
+per-player feature dict.
 
 ## Step 2 - Train the actor
 

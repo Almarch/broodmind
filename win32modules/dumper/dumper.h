@@ -1,8 +1,11 @@
 #pragma once
 #include <BWAPI.h>
 #include <fstream>
+#include <set>
+#include <vector>
 
-// Minimal AIModule: writes one line per sampled frame, plays nothing.
+// Minimal AIModule: snapshots economy features per player at a set of target
+// frames during replay playback. Plays nothing.
 class DumperModule : public BWAPI::AIModule {
 public:
     void onStart() override;
@@ -11,5 +14,9 @@ public:
 
 private:
     std::ofstream out;
-    static const int SAMPLE_PERIOD = 72;  // ~3 seconds at fastest speed
+    std::set<int> targetFrames;
+    std::vector<BWAPI::Player> activePlayers;
+    void writePlayerFeatures(int frame, BWAPI::Player p, bool first);
 };
+
+static const char *TARGET_PATH = "bwapi-data/read/target_frames.txt";
