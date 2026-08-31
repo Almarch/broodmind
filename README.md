@@ -180,15 +180,31 @@ cd ..
 
 ### Extract the features from selected frames
 
-The dumper module has to be built:
+The analysis pipeline replays a saved `.rep` inside the `starcraft:analyze`
+Docker image and extracts, for each player, the economy features at a set of
+target frames: current minerals, gas, supply used/total, cumulative minerals
+and gas, and worker count. Both players are sampled (perfect information, no
+fog of war).
+
+First build the image (this compiles the BWAPI dumper and copies the built
+`bwheadless` launcher into a small image derived from `starcraft:game`):
 
 ```bash
-make win32builder
-make dumper
-make clean
-make bwapi
-make install
+make analyze-image
 ```
+
+Then extract the features of an existing replay at frames 100, 200 and 300:
+
+```bash
+cd analyze
+python analyze.py --replay ../play/parties/0a9c02acedea4d3b.rep --frames 100 200 300
+cd ..
+```
+
+The result is written to `analyze/features/0a9c02acedea4d3b.json`: general
+match information at the top level (`map`, `winner`, the latter taken from
+`play/metadata.csv`), then the list of sampled frames, each frame holding a
+per-player feature dict.
 
 ## Step 2 - Train the actor
 

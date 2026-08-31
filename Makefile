@@ -22,7 +22,7 @@ clean:
 
 BOT_DIR := $(HOME)/.scbw/bots/dumper
 
-.PHONY: bwapi install
+.PHONY: bwapi install analyze-image
 
 # BWAPI.dll ships inside the official release already fetched by the image.
 bwapi:
@@ -36,3 +36,10 @@ install: dumper bwapi
 	cp $(MODULES)/dumper/dist/dumper.dll $(BOT_DIR)/AI/
 	cp $(MODULES)/dumper/dist/BWAPI.dll  $(BOT_DIR)/
 	cp $(MODULES)/dumper/bot.json        $(BOT_DIR)/
+
+# Image used by analyze/analyze.py to replay .rep files and dump features.
+# Requires the built bwheadless launcher (bwheadless/build/bwheadless_ref.exe)
+# from ../bwheadless and the dumper dist outputs from win32modules/dumper.
+analyze-image:
+	make dumper bwapi
+	docker build -t starcraft:analyze -f analyze/Dockerfile .
