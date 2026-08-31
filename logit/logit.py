@@ -1,14 +1,14 @@
 # %% [markdown]
-# # Critic minimaliste : régression logistique (torch) — P(gagner) à partir des ressources relatives
+# # Minimalist critic: logistic regression (torch) — P(win) from relative resources
 #
-# Pour chaque replay (un JSON par replay) et pour CHAQUE frame, on garde **une seule
-# observation**, toujours **du point de vue du joueur 0** (`players[0]`, index 0 de
-# `features`) :
-#   - X = ressources du joueur 0 **relatives** à celles de l'adversaire (joueur 1)
-#   - y = 1 si le joueur 0 a gagné le match, sinon 0
+# For each replay (one JSON per replay) and for EACH frame, we keep a **single
+# observation**, always from **player 0's point of view** (`players[0]`, index 0 of
+# `features`):
+#   - X = player 0's resources **relative** to the opponent's (player 1)
+#   - y = 1 if player 0 won the match, else 0
 #
-# Aucune duplication (pas de miroir du joueur 1). 1 frame = 1 datapoint.
-# Le modèle est un simple `Linear` + sigmoïde = régression logistique.
+# No duplication (no mirror of player 1). 1 frame = 1 datapoint.
+# The model is a simple `Linear` + sigmoid = logistic regression.
 
 # %%
 import json
@@ -28,10 +28,10 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 print("device:", DEVICE)
 
 # %% [markdown]
-# ## 0) Construction du dataset
-# Chaque frame d'un replay donne un point (perspective joueur 0). On fabrique des
-# caractéristiques **relatives** : `log(1+x) - log(1+x_opp)` (rapport log symétrique)
-# pour minéraux, gaz, cumulés, gaz cumulé, workers et supply utilisée.
+# ## 0) Dataset construction
+# Each frame of a replay yields one point (player-0 perspective). We build
+# **relative** features: `log(1+x) - log(1+x_opp)` (symmetric log-ratio) for
+# minerals, gas, cumulative minerals, cumulative gas, workers and used supply.
 
 # %%
 REL_KEY = ["minerals", "gas", "cum_minerals", "cum_gas", "workers", "supply_used"]
@@ -57,22 +57,22 @@ def build_dataset():
 
 
 df = build_dataset()
-print(f"replays analysés : {len(set(FEATURES_DIR.glob('*.json')))}")
-print(f"datapoints (1 par frame) : {len(df)}")
-print("répartition victoire joueur0 :\n", df["label"].value_counts().sort_index().to_dict())
+print(f"replays analyzed: {len(set(FEATURES_DIR.glob('*.json')))}")
+print(f"datapoints (1 per frame): {len(df)}")
+print("player-0 win distribution:\n", df["label"].value_counts().sort_index().to_dict())
 print(df.head())
 
 # %%
-# Standardisation des caractéristiques (Z-score) pour stabilité de l'apprentissage.
+# Standardize features (Z-score) for learning stability.
 X = df[REL_KEY].astype(float).values
 mu, sd = X.mean(axis=0), X.std(axis=0) + 1e-9
 Xs = (X - mu) / sd
 y = df["label"].values.astype(np.float32)
 n_feat = Xs.shape[1]
-print("matrice X :", Xs.shape, "| y :", y.shape)
+print("X matrix:", Xs.shape, "| y:", y.shape)
 
 # %% [markdown]
-# ## 1) Régression logistique torch (1 couche linéaire + sigmoïde)
+# ## 1) torch logistic regression (1 linear layer + sigmoid)
 
 # %%
 class LogReg(nn.Module):
@@ -102,20 +102,20 @@ def train(model, Xt, yt, epochs=2000, lr=0.1):
 
 model = LogReg(n_feat).to(DEVICE)
 hist = train(model, Xs, y, epochs=3000)
-print("loss finale :", round(hist[-1], 4))
+print("final loss:", round(hist[-1], 4))
 
 # %% [markdown]
-# ## 2) Courbe d'apprentissage (loss BCE)
+# ## 2) Learning curve (BCE loss)
 
 # %%
 plt.figure(figsize=(7, 3))
 plt.plot(hist)
-plt.xlabel("epoch"); plt.ylabel("BCE loss"); plt.title("Apprentissage de la régression logistique")
+plt.xlabel("epoch"); plt.ylabel("BCE loss"); plt.title("Logistic regression training")
 plt.grid(alpha=.3); plt.tight_layout(); plt.show()
 
 # %% [markdown]
-# ## 3) Poids des caractéristiques (importance relative sur P(gagner))
-# Les poids sont sur les entrées **standardisées** → comparables entre elles.
+# ## 3) Feature weights (relative importance on P(win))
+# Weights are on **standardized** inputs, so they are comparable with each other.
 
 # %%
 w = model.linear.weight.detach().cpu().numpy().ravel()
@@ -123,16 +123,15 @@ b = model.linear.bias.detach().cpu().numpy().ravel()[0]
 plt.figure(figsize=(8, 3.5))
 plt.bar(REL_KEY, w, color="steelblue")
 plt.axhline(0, color="k", lw=.8)
-plt.title(f"Poids de la régression logistique (biais = {b:.3f})")
-plt.ylabel("poids (X standardisé)")
+plt.title(f"Logistic regression weights (bias = {b:.3f})")
+plt.ylabel("weight (standardized X)")
 plt.xticks(rotation=20)
 plt.grid(alpha=.3); plt.tight_layout(); plt.show()
 
 # %% [markdown]
-# ## 4) Sigmoïde superposée aux données réelles
-# On projette chaque point sur l'axe `z = X·w + b` (le logit) et on compare la
-# probabilité prédite (sigmoïde) aux observations réelles (0/1, avec bruit pour
-# visualiser la densité).
+# ## 4) Sigmoid overlaid on real data
+# We project every point onto `z = X·w + b` (the logit) and compare the predicted
+# probability (sigmoid) with the real observations (0/1, jittered to show density).
 
 # %%
 with torch.no_grad():
@@ -140,30 +139,29 @@ with torch.no_grad():
     logit = model.linear(torch.from_numpy(Xs).float().to(DEVICE)).cpu().numpy().ravel()
 
 fig, axes = plt.subplots(1, 3, figsize=(16, 4))
-# (a) données réelles : label vs ressources cumulées relatives
+# (a) real data: label vs relative cumulative resources
 axes[0].scatter(X[:, 2], X[:, 3], c=y, cmap="bwr", s=10, alpha=.5, edgecolors="none")
-axes[0].set_xlabel("log-ratio cum_minerals (j0 / j1)"); axes[0].set_ylabel("log-ratio cum_gas (j0 / j1)")
-axes[0].set_title("Données réelles : 0=défaite 1=victoire")
-# (b) observations (avec jitter) vs logit
+axes[0].set_xlabel("log-ratio cum_minerals (p0 / p1)"); axes[0].set_ylabel("log-ratio cum_gas (p0 / p1)")
+axes[0].set_title("Real data: 0=loss 1=win")
+# (b) observations (jittered) vs logit
 axes[1].scatter(logit, y, s=8, alpha=.25, edgecolors="none", color="gray")
-axes[1].set_xlabel("logit z = X·w+b"); axes[1].set_ylabel("résultat réel (0/1)")
-axes[1].set_title("Observations réelles vs logit")
-# (c) sigmoïde prédite vs logit
+axes[1].set_xlabel("logit z = X·w+b"); axes[1].set_ylabel("actual outcome (0/1)")
+axes[1].set_title("Real observations vs logit")
+# (c) predicted sigmoid vs logit
 zz = np.linspace(logit.min(), logit.max(), 300)
 axes[2].plot(zz, 1 / (1 + np.exp(-zz)), color="crimson", lw=2)
 axes[2].scatter(logit, y + np.random.uniform(-.04, .04, size=len(y)), s=8, alpha=.2, edgecolors="none", color="gray")
-axes[2].set_xlabel("logit z"); axes[2].set_ylabel("P(gagner)")
-axes[2].set_title("Sigmoïde de la régression logistique")
+axes[2].set_xlabel("logit z"); axes[2].set_ylabel("P(win)")
+axes[2].set_title("Logistic regression sigmoid")
 for ax in axes:
     ax.grid(alpha=.3)
 plt.tight_layout(); plt.show()
 
 # %% [markdown]
-# ## 5) Précision par frame littérale
-# Les replays sont analysés aux mêmes frames (7200, 14400, ..., 43200). On regarde
-# donc la précision pour CHAQUE frame telle quelle, et le nombre d'observations
-# réelles disponibles (logiquement décroissant : les parties courtes n'ont pas les
-# dernières frames).
+# ## 5) Accuracy by literal frame
+# Replays are analyzed at the same frames (7200, 14400, ..., 43200). We therefore
+# look at the accuracy for EACH frame as-is, plus the number of real observations
+# available (logically decreasing: short games do not have the last frames).
 
 # %%
 df_t = df.copy()
@@ -176,7 +174,7 @@ df_t["frame_cat"] = cats
 summary = (df_t.groupby("frame_cat", observed=True)
              .agg(n=("acc", "size"), acc=("acc", "mean"))
              .round(3))
-print("Frames littérales présentes dans les JSON :", ordered)
+print("Literal frames present in the JSONs:", ordered)
 print(summary)
 
 fig, ax = plt.subplots(figsize=(8, 4))
@@ -184,24 +182,24 @@ summary["acc"].plot(kind="bar", color="teal", ax=ax)
 for i, (acc, n) in enumerate(zip(summary["acc"], summary["n"])):
     ax.text(i, acc + 0.01, f"n={n}", ha="center", fontsize=8)
 ax.axhline(.5, color="k", ls="--", lw=.8)
-ax.set_ylabel("précision (seuil 0.5)")
-ax.set_xlabel("frame (secondes de jeu × 24)")
-ax.set_title("Précision du critic par frame ; n = nb d'observations réelles")
+ax.set_ylabel("accuracy (0.5 threshold)")
+ax.set_xlabel("frame (game seconds × 24)")
+ax.set_title("Critic accuracy per frame; n = number of real observations")
 plt.grid(alpha=.3); plt.tight_layout(); plt.show()
 
 # %% [markdown]
-# ## 6) Vue 2D détaillée : workers et minéraux cumulés relatifs
-# Nuage des points réels colorés par issue, avec la frontière de décision approx.
+# ## 6) Detailed 2D view: relative workers and cumulative minerals
+# Scatter of the real points colored by outcome.
 
 # %%
 plt.figure(figsize=(7, 5))
 sc = plt.scatter(X[:, 4], X[:, 2], c=y, cmap="bwr", s=14, alpha=.6, edgecolors="none")
-plt.colorbar(sc, label="résultat (j0)")
-plt.xlabel("log-ratio workers (j0/j1)"); plt.ylabel("log-ratio cum_minerals (j0/j1)")
-plt.title("Données réelles : ressources relatives vs issue")
+plt.colorbar(sc, label="outcome (p0)")
+plt.xlabel("log-ratio workers (p0/p1)"); plt.ylabel("log-ratio cum_minerals (p0/p1)")
+plt.title("Real data: relative resources vs outcome")
 plt.grid(alpha=.3); plt.tight_layout(); plt.show()
 
 # %%
-print("Précision globale (seuil 0.5) :",
+print("Global accuracy (0.5 threshold):",
       round(((z > 0.5).astype(int) == y).mean(), 4))
-print("Poids (ordre) :", dict(sorted(zip(REL_KEY, w), key=lambda kv: -abs(kv[1]))))
+print("Weights (ordered):", dict(sorted(zip(REL_KEY, w), key=lambda kv: -abs(kv[1]))))
