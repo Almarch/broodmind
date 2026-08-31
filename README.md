@@ -193,11 +193,11 @@ First build the image (this compiles the BWAPI dumper and copies the built
 make analyze-image
 ```
 
-Then extract the features of an existing replay at frames 100, 200 and 300:
+Then extract the features of all replays:
 
 ```bash
 cd analyze
-python analyze.py --replay ../play/parties/0a9c02acedea4d3b.rep --frames 100 200 300
+python analyze.py --replay ../play/parties --frames 7200 14400 21600 28800 36000 43200 --cpu 16
 cd ..
 ```
 
